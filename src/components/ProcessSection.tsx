@@ -44,18 +44,24 @@ export default function ProcessSection() {
         </div>
 
         {/* Mobile vertical */}
-        <div className="md:hidden space-y-8">
+        <div className="md:hidden space-y-0">
           {steps.map((s, i) => (
             <div
               key={s.num}
               className={`flex gap-5 transition-all duration-600 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-5"}`}
               style={{ transitionDelay: isVisible ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-card border-2 border-primary/30 flex items-center justify-center">
-                <s.icon className="w-6 h-6 text-primary" />
+              {/* Ícone + linha vertical */}
+              <div className="flex flex-col items-center flex-shrink-0">
+                <div className="w-14 h-14 rounded-full bg-card border-2 border-primary/30 flex items-center justify-center relative">
+                  <s.icon className="w-6 h-6 text-primary" />
+                  <span className="absolute -top-1 -right-1 text-[10px] font-bold text-primary-foreground bg-primary rounded-full w-5 h-5 flex items-center justify-center">{s.num}</span>
+                </div>
+                {i < steps.length - 1 && (
+                  <div className="w-px flex-1 min-h-[2rem] bg-gradient-to-b from-primary/40 to-primary/10 my-1" />
+                )}
               </div>
-              <div>
-                <span className="text-xs font-bold text-primary mb-1 block">{s.num}</span>
+              <div className="pb-8">
                 <h3 className="text-base font-semibold text-foreground mb-1 font-sans">{s.title}</h3>
                 <p className="text-sm text-muted-foreground">{s.desc}</p>
               </div>

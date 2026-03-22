@@ -2,13 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/5519988187706?text=Ol%C3%A1%2C%20Dra.%20Maria%20Isabella%21%20Gostaria%20de%20agendar%20uma%20consulta%20e%20entender%20melhor%20meus%20direitos.";
-const PROFILE_IMG = "/assets/images/perfilAdvogada2.jpeg";
+const PROFILE_IMG = "/assets/images/perfilAdvogada.jpeg";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-      {/* Subtle gradient bg */}
+      {/* Gradiente base */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-[hsl(38,20%,10%)] opacity-80" />
+      {/* Textura grain */}
+      <div className="absolute inset-0 opacity-[0.14]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }} />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -59,7 +61,7 @@ export default function HeroSection() {
               <img
                 src={PROFILE_IMG}
                 alt="Dra. Maria Isabella Gomes — Advogada especialista em Direito do Consumidor"
-                className="relative rounded-2xl w-72 sm:w-80 lg:w-96 object-cover aspect-[3/4] shadow-2xl shadow-black/40"
+                className="relative rounded-2xl w-72 sm:w-80 lg:w-96 object-cover object-top aspect-[3/4] shadow-2xl shadow-black/40"
                 loading="eager"
               />
             </div>

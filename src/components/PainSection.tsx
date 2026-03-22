@@ -14,7 +14,8 @@ export default function PainSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="direitos" className="py-20 md:py-28 bg-surface" ref={ref}>
+    <section id="direitos" className="py-20 md:py-28 bg-surface relative overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat', backgroundSize: '128px 128px' }} />
       <div className="container">
         <div className={`max-w-2xl mx-auto text-center mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4" style={{ textWrap: "balance" as any }}>
@@ -42,7 +43,7 @@ export default function PainSection() {
         </div>
 
         <p className={`text-center mt-12 text-lg sm:text-xl font-semibold text-primary transition-all duration-700 delay-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-          "Empresas de grande porte contam com que você desista. Não desista."
+          Empresas de grande porte contam com que você desista. Não desista.
         </p>
       </div>
     </section>

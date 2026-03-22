@@ -24,7 +24,7 @@ export default function ServicesSection() {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className={`group relative p-7 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 ${
+              className={`group relative p-7 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 before:absolute before:inset-0 before:rounded-xl before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 before:bg-[radial-gradient(ellipse_at_top_left,hsla(38,45%,58%,0.07),transparent_60%)] overflow-hidden ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
               }`}
               style={{ transitionDelay: isVisible ? `${i * 100}ms` : "0ms" }}

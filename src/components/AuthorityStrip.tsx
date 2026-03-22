@@ -11,7 +11,7 @@ export default function AuthorityStrip() {
     >
       <div className="container">
         <p className="text-center text-sm sm:text-base font-medium text-primary italic tracking-wide">
-          "Atuação estratégica em Direito do Consumidor — análise técnica, comunicação clara e foco em resultado."
+          Atuação estratégica em Direito do Consumidor, análise técnica, comunicação clara e foco em resultado.
         </p>
       </div>
     </section>

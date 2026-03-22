@@ -1,7 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { UserCheck, MessageSquare, Globe } from "lucide-react";
 
-const PROFILE_IMG = "/assets/images/perfilAdvogada.jpeg";
+const PROFILE_IMG = "/assets/images/perfilAdvogada2.jpeg";
 
 const differentials = [
   { icon: UserCheck, text: "Atendimento direto com a Dra. Maria Isabella" },
@@ -13,7 +13,12 @@ export default function AboutSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="sobre" className="py-20 md:py-28" ref={ref}>
+    <section id="sobre" className="py-20 md:py-28 relative overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 hidden md:block bg-[url('/assets/images/aboutSection-background.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 md:hidden bg-[url('/assets/images/aboutSection-background_mobile.png')] bg-contain bg-top bg-no-repeat" />
+      <div className="absolute inset-0 bg-black/30" />
+      {/* Linha dourada vertical decorativa */}
+      <div className="absolute left-0 top-1/4 h-1/2 w-[3px] bg-gradient-to-b from-transparent via-primary/40 to-transparent hidden lg:block" />
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
